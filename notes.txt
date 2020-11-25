@@ -1,0 +1,22 @@
+build container with specified Dockerfile_name
+    docker build -f Dockerfile.dev .
+
+docker run -it -p 3000:3000 CONTAINER_ID
+
+docker run -p 3000:3000 -v $(pwd):/app CONTAINER_ID
+
+Docker Quickstart (recommended)
+docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app CONTAINER_ID
+docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app -e CHOKIDAR_USEPOLLING=true CONTAINER_ID
+
+docker run -it -p 3000:3000 -v /app/node_modules -v ${PWD}:/app 02f9ad819a06 
+
+docker-compose up
+
+run tests
+    docker build -f Dockerfile.dev
+    docker run -it DOCKER_ID npm run test
+
+
+nginx
+    docker run -p 8080:80 742ee579704acc181883fd9f9ccdd0f0ab196ba34be5e9adee8c01a71b43f09a
